@@ -18,9 +18,6 @@ RUN apt update         && \
     apt upgrade -y     && \
     apt install -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
         locales               \
-        mongodb-server        \
-        mongodb-clients       \
-        redis-server          \
         coreutils             \
         util-linux            \
         bsdutils              \
@@ -54,7 +51,7 @@ RUN curl -o- https://cdn.rawgit.com/creationix/nvm/v0.33.2/install.sh | bash && 
     nvm cache clear && \
     npm install --prefix "/theme-manager"'
 
-EXPOSE 3000 5000
+EXPOSE 3000
 
 ENTRYPOINT /bin/bash
 
